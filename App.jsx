@@ -820,29 +820,68 @@ function ResumePage() {
 function ContactPage() {
   return (
     <section>
-      <SectionTitle title="Contact" subtitle="Feel free to reach out about research, collaboration, or shared interests across public health and related fields." />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 20 }}>
+      <SectionTitle
+        title="Contact"
+        subtitle="Feel free to reach out about research, collaboration, or shared interests across public health and related fields."
+      />
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          gap: 20,
+        }}
+      >
         <AppCard title="Get in Touch">
           <div style={{ display: "grid", gap: 14, color: theme.muted }}>
-            <a href={`mailto:${contact.email}`} style={{ ...linkStyle(), display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <a
+              href={`mailto:${contact.email}`}
+              style={{
+                ...linkStyle(),
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+              }}
+            >
               <Mail size={16} /> {contact.email}
             </a>
-            <a href={contact.linkedin} target="_blank" rel="noreferrer" style={{ ...linkStyle(), display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <a
+              href={contact.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                ...linkStyle(),
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+              }}
+            >
               <Linkedin size={16} /> LinkedIn Profile
             </a>
           </div>
         </AppCard>
 
-        <AppCard title="Collaboration Note" description="I am especially interested in blood cancer research, public health data, and interdisciplinary questions that connect epidemiology with broader health outcomes.">
+        <AppCard
+          title="Collaboration Note"
+          description="I am especially interested in blood cancer research, public health data, and interdisciplinary questions that connect epidemiology with broader health outcomes."
+        >
           <div style={{ color: theme.muted, lineHeight: 1.8 }}>
-            <p>I enjoy exploring both focused cancer research questions and more diverse areas across public health, data, and health-related c
+            <p>
+              I enjoy exploring both focused cancer research questions and more
+              diverse areas across public health, data, and health-related
+              communication.
+            </p>
+            <p>If my work overlaps with your interests, feel free to reach out.</p>
+          </div>
+        </AppCard>
       </div>
     </section>
   );
 }
 
 export default function MiyaPortfolioWebsite() {
-  const [page, setPage] = useState(typeof window !== "undefined" ? getPageFromHash() : "home");
+  const [page, setPage] = useState(
+    typeof window !== "undefined" ? getPageFromHash() : "home"
+  );
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
@@ -857,19 +896,14 @@ export default function MiyaPortfolioWebsite() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [page]);
 
-  const pageContent = page === "about"
-    ? <AboutPage />
-    : page === "projects"
-    ? <ProjectsPage />
-    : page === "writing"
-    ? <WritingPage />
-    : page === "activities"
-    ? <ActivitiesPage />
-    : page === "resume"
-    ? <ResumePage />
-    : page === "contact"
-    ? <ContactPage />
-    : <HomePage />;
+  const pageContent =
+    page === "about" ? <AboutPage /> :
+    page === "projects" ? <ProjectsPage /> :
+    page === "writing" ? <WritingPage /> :
+    page === "activities" ? <ActivitiesPage /> :
+    page === "resume" ? <ResumePage /> :
+    page === "contact" ? <ContactPage /> :
+    <HomePage />;
 
   return (
     <div
@@ -877,33 +911,113 @@ export default function MiyaPortfolioWebsite() {
         minHeight: "100vh",
         background: theme.bg,
         color: theme.text,
-        fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        fontFamily:
+          "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
         position: "relative",
         overflow: "hidden",
       }}
     >
       <BackgroundDecor />
       <div style={{ position: "relative", zIndex: 1 }}>
-        <SiteHeader page={page} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+        <SiteHeader
+          page={page}
+          mobileOpen={mobileOpen}
+          setMobileOpen={setMobileOpen}
+        />
 
-        <main style={{ maxWidth: 1160, margin: "0 auto", padding: "28px 20px 60px" }}>
-          <motion.div key={page} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
+        <main
+          style={{
+            maxWidth: 1160,
+            margin: "0 auto",
+            padding: "28px 20px 60px",
+          }}
+        >
+          <motion.div
+            key={page}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
             {pageContent}
           </motion.div>
         </main>
 
-        <footer style={{ borderTop: `1px solid ${theme.border}`, background: "rgba(255,255,255,0.45)", backdropFilter: "blur(10px)" }}>
-          <div style={{ maxWidth: 1160, margin: "0 auto", padding: "22px 20px", display: "flex", justifyContent: "space-between", gap: 14, flexWrap: "wrap", color: theme.muted }}>
+        <footer
+          style={{
+            borderTop: `1px solid ${theme.border}`,
+            background: "rgba(255,255,255,0.45)",
+            backdropFilter: "blur(10px)",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: 1160,
+              margin: "0 auto",
+              padding: "22px 20px",
+              display: "flex",
+              justifyContent: "space-between",
+              gap: 14,
+              flexWrap: "wrap",
+              color: theme.muted,
+            }}
+          >
             <div>© 2026 {siteData.name}. Clean Academic theme.</div>
-            <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
-              <button onClick={() => navigateTo("home")} style={{ background: "transparent", border: 0, color: theme.muted, cursor: "pointer" }}><Home size={16} /></button>
-              <button onClick={() => navigateTo("about")} style={{ background: "transparent", border: 0, color: theme.muted, cursor: "pointer" }}>About</button>
-              <button onClick={() => navigateTo("projects")} style={{ background: "transparent", border: 0, color: theme.muted, cursor: "pointer" }}>Projects</button>
-              <button onClick={() => navigateTo("contact")} style={{ background: "transparent", border: 0, color: theme.muted, cursor: "pointer" }}>Contact</button>
+            <div
+              style={{
+                display: "flex",
+                gap: 10,
+                alignItems: "center",
+                flexWrap: "wrap",
+              }}
+            >
+              <button
+                onClick={() => navigateTo("home")}
+                style={{
+                  background: "transparent",
+                  border: 0,
+                  color: theme.muted,
+                  cursor: "pointer",
+                }}
+              >
+                <Home size={16} />
+              </button>
+              <button
+                onClick={() => navigateTo("about")}
+                style={{
+                  background: "transparent",
+                  border: 0,
+                  color: theme.muted,
+                  cursor: "pointer",
+                }}
+              >
+                About
+              </button>
+              <button
+                onClick={() => navigateTo("projects")}
+                style={{
+                  background: "transparent",
+                  border: 0,
+                  color: theme.muted,
+                  cursor: "pointer",
+                }}
+              >
+                Projects
+              </button>
+              <button
+                onClick={() => navigateTo("contact")}
+                style={{
+                  background: "transparent",
+                  border: 0,
+                  color: theme.muted,
+                  cursor: "pointer",
+                }}
+              >
+                Contact
+              </button>
             </div>
           </div>
         </footer>
       </div>
-    </div
+    </div>
   );
 }
