@@ -86,25 +86,35 @@ const quickFacts = [
 
 const projects = [
   {
-    title: "Subtype-Specific Patterns of Peripheral T-Cell Lymphoma in Diverse Asian Populations",
-    role: "Student Researcher, Dr. Wendy Cozen's Lab / UCI CURE-Cancer",
-    dates: "June 2025 – Present",
-    summary:
-      "Conducting independent and collaborative research on peripheral T-cell lymphoma incidence patterns using the Los Angeles Cancer Surveillance Program, the California Cancer Registry, and the NCI SEER program. The project focuses on subtype-specific incidence patterns and population differences across diverse Asian groups.",
-    details: [
-      "Works with population-based cancer registry data to study peripheral T-cell lymphoma epidemiology.",
-      "Developed as part of an independent summer cancer research project through CURE-Cancer.",
-      "Supported by the American Cancer Society through a competitive summer research program.",
-    ],
-    tools: ["SEER", "CCR", "CSP", "Cancer Epidemiology", "Data Analysis"],
-    conference: {
+  title: "Subtype-Specific Patterns of Peripheral T-Cell Lymphoma in Diverse Asian Populations",
+  role: "Student Researcher, Dr. Wendy Cozen's Lab / UCI CURE-Cancer",
+  dates: "June 2025 – Present",
+  summary:
+    "Conducting independent and collaborative research on peripheral T-cell lymphoma incidence patterns using the Los Angeles Cancer Surveillance Program, the California Cancer Registry, and the NCI SEER program. The project focuses on subtype-specific incidence patterns and population differences across diverse Asian groups.",
+  details: [
+    "Works with population-based cancer registry data to study peripheral T-cell lymphoma epidemiology.",
+    "Developed as part of an independent summer cancer research project through CURE-Cancer.",
+    "Supported by the American Cancer Society through a competitive summer research program.",
+  ],
+  tools: ["SEER", "CCR", "CSP", "Cancer Epidemiology", "Data Analysis"],
+  funding:
+    "American Cancer Society-funded paid summer research internship through the UCI CURE-Cancer program; selected among the top 12 candidates based on research and academic achievement.",
+  conferences: [
+    {
+      title: "Summer CURE-Cancer Symposium 2025",
+      note:
+        "Poster presentation on subtype-specific peripheral T-cell lymphoma patterns as part of the summer UCI CURE-Cancer research program.",
+      extra: "August 22, 2025 · Poster No. 10",
+    },
+    {
       title: "AACR Annual Meeting 2026",
       note:
         "Poster presentation in Population Sciences: Epidemiology: Cancer Incidence, Mortality, Patterns, and Methodology.",
       extra: "April 20, 2026 · San Diego, California · Poster No. 2350",
     },
-    publication:
-      "Kuang X, Lam E, Bernstein M, Pinter-Brown L, Lim M, Foley N, Cozen W. Subtype-specific patterns of peripheral T-cell lymphoma in diverse Asian populations. Proceedings of the AACR Annual Meeting 2026.",
+  ],
+  publication:
+    "Kuang X, Lam E, Bernstein M, Pinter-Brown L, Lim M, Foley N, Cozen W. Subtype-specific patterns of peripheral T-cell lymphoma in diverse Asian populations. Proceedings of the AACR Annual Meeting 2026.",
   },
   {
     title: "Integrating Real-World Wearable Data, Physical Activity, Sleep, and Breast Cancer Risk",
