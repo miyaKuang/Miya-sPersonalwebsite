@@ -129,17 +129,20 @@ const projects = [
       "Weber Y, Ilaty A, Kuang X, Nguyen EL, Plaza-Florido A, Radom-Aizik S, Ziogas A, Rahmani A, Park HL. Integrating real-world wearable data into breast cancer risk assessment: Evidence from the All of Us Research Program. Proceedings of the AACR Annual Meeting 2026.",
   },
   {
-    title: "Fasting-Mimicking Diet Pilot Study in Asian Americans",
-    role: "Student Researcher, Dr. Hannah Lui Park's Lab",
-    dates: "September 2024 – Present",
-    summary:
-      "Conducting data analysis and data cleanup in R for a pilot study on fasting-mimicking diet interventions in Asian American participants, including significance testing, group comparisons, and visualization.",
-    details: [
-      "Performs statistical testing and data organization for research analysis.",
-      "Supports group comparisons and data visualization for study reporting.",
-      "Contributes to translational and preventive health research focused on Asian American populations.",
-    ],
-    tools: ["R", "Statistics", "Data Cleaning", "Visualization", "Pilot Study"],
+  title: "Fasting-Mimicking Diet Pilot Study in Asian Americans",
+  role: "Student Researcher, Dr. Hannah Lui Park's Lab",
+  dates: "September 2024 – Present",
+  summary:
+    "Conducting data analysis and data cleanup in R for a pilot study on fasting-mimicking diet interventions in Asian American participants, including significance testing, group comparisons, visualization, and manuscript-related research support.",
+  details: [
+    "Performs statistical testing and data organization for research analysis.",
+    "Supports group comparisons and data visualization for study reporting.",
+    "Contributes to translational and preventive health research focused on Asian American populations.",
+    "Supports ongoing manuscript development on the feasibility and effects of a 5-day fasting-mimicking diet in Asian Americans with prediabetes.",
+  ],
+  tools: ["R", "Statistics", "Data Cleaning", "Visualization", "Pilot Study"],
+  publication:
+    "Wang K, Kuang X, Kang M, Prabaharan J, Castillo M, Nguyen E, Shah A, Salopal S, Tiu BC, Brandhorst S, Ohn JH, Wong N, Yang Q, Lindsay K, Longo VD, Park HL. Feasibility and Effects of a 5-Day Fasting Mimicking Diet in Asian Americans with Prediabetes: A Pilot Study. Manuscript in preparation.",
   },
   {
     title: "Interactive Drawing Platform for Autism, Art, and Language Learning",
@@ -170,6 +173,12 @@ const writingAndPublications = [
     type: "Conference abstract",
     description:
       "Conference abstract connecting real-world wearable data, the All of Us Research Program, and the broader Calit2-supported expansion on physical activity, sleep, and breast cancer risk.",
+  },
+  {
+  title: "Feasibility and Effects of a 5-Day Fasting Mimicking Diet in Asian Americans with Prediabetes: A Pilot Study",
+  type: "Upcoming manuscript",
+  description:
+    "Manuscript in preparation on the feasibility and effects of a 5-day fasting-mimicking diet in Asian Americans with prediabetes. Authors: Kylee Wang, Xuanxi Kuang, Mirian Kang, Janani Prabaharan, Makena Castillo, Emily Nguyen, Annika Shah, Simar Salopal, Bryan-Clement Tiu, Sebastian Brandhorst, Jung Hun Ohn, Nathan Wong, Qin Yang, Karen Lindsay, Valter D. Longo, Hannah Lui Park.",
   },
   {
     title: "Interactive and Collaborative Drawing Platform to Engage the Autism Spectrum in Art and Language Learning using Artificial Intelligence",
@@ -723,11 +732,21 @@ function ProjectsPage() {
                 {project.conference.extra ? <div style={{ color: theme.accent, fontWeight: 700, marginTop: 8 }}>{project.conference.extra}</div> : null}
               </div>
             ) : null}
-
             {project.publication ? (
-              <div style={{ border: `1px solid ${theme.border}`, borderRadius: 20, padding: 16, background: "rgba(255,255,255,0.58)" }}>
-                <div style={{ fontWeight: 800, color: theme.text, marginBottom: 6 }}>Associated Publication / Abstract</div>
-                <div style={{ color: theme.muted, lineHeight: 1.8 }}>{project.publication}</div>
+              <div
+                style={{
+                  border: `1px solid ${theme.border}`,
+                  borderRadius: 20,
+                  padding: 16,
+                  background: theme.panelSoft,
+                }}
+              >
+                <div style={{ fontWeight: 800, color: theme.text, marginBottom: 6 }}>
+                  Associated Publication / Abstract
+                </div>
+                <div style={{ color: theme.muted, lineHeight: 1.8 }}>
+                  {project.publication}
+                </div>
               </div>
             ) : null}
           </div>
