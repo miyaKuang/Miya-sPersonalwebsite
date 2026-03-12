@@ -733,13 +733,59 @@ function ProjectsPage() {
                 <div style={{ color: theme.muted, lineHeight: 1.7 }}>{project.funding}</div>
               </div>
             ) : null}
-
-            {project.conference ? (
-              <div style={{ border: `1px solid ${theme.border}`, borderRadius: 20, padding: 16, background: theme.panelSoft, marginBottom: project.publication ? 14 : 0 }}>
-                <div style={{ fontWeight: 800, color: theme.text, marginBottom: 6 }}>Conference / Presentation</div>
-                <div style={{ color: theme.text, fontWeight: 700, marginBottom: 4 }}>{project.conference.title}</div>
-                <div style={{ color: theme.muted, lineHeight: 1.7 }}>{project.conference.note}</div>
-                {project.conference.extra ? <div style={{ color: theme.accent, fontWeight: 700, marginTop: 8 }}>{project.conference.extra}</div> : null}
+            {project.conferences ? (
+              <div style={{ display: "grid", gap: 14, marginBottom: project.publication ? 14 : 0 }}>
+                {project.conferences.map((conference) => (
+                  <div
+                    key={`${project.title}-${conference.title}`}
+                    style={{
+                      border: `1px solid ${theme.border}`,
+                      borderRadius: 20,
+                      padding: 16,
+                      background: theme.panelSoft,
+                    }}
+                  >
+                    <div style={{ fontWeight: 800, color: theme.text, marginBottom: 6 }}>
+                      Conference / Presentation
+                    </div>
+                    <div style={{ color: theme.text, fontWeight: 700, marginBottom: 4 }}>
+                      {conference.title}
+                    </div>
+                    <div style={{ color: theme.muted, lineHeight: 1.7 }}>
+                      {conference.note}
+                    </div>
+                    {conference.extra ? (
+                      <div style={{ color: theme.accent, fontWeight: 700, marginTop: 8 }}>
+                        {conference.extra}
+                      </div>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            ) : project.conference ? (
+              <div
+                style={{
+                  border: `1px solid ${theme.border}`,
+                  borderRadius: 20,
+                  padding: 16,
+                  background: theme.panelSoft,
+                  marginBottom: project.publication ? 14 : 0,
+                }}
+              >
+                <div style={{ fontWeight: 800, color: theme.text, marginBottom: 6 }}>
+                  Conference / Presentation
+                </div>
+                <div style={{ color: theme.text, fontWeight: 700, marginBottom: 4 }}>
+                  {project.conference.title}
+                </div>
+                <div style={{ color: theme.muted, lineHeight: 1.7 }}>
+                  {project.conference.note}
+                </div>
+                {project.conference.extra ? (
+                  <div style={{ color: theme.accent, fontWeight: 700, marginTop: 8 }}>
+                    {project.conference.extra}
+                  </div>
+                ) : null}
               </div>
             ) : null}
             {project.publication ? (
